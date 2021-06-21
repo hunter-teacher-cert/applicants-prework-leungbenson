@@ -21,9 +21,7 @@ public class Ex2{
     
     // Prints out conversion to one decimal place
     
-    System.out.printf("%.1f", celcius);
-    System.out.printf(" C = %.1f", fah);
-    System.out.printf(" F");
+    System.out.printf("%.1f C = %.1f F\n", celcius, fah);
         
   }
 }
