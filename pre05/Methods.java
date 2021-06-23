@@ -74,7 +74,6 @@ public class Methods{
   // Exercise 8 - Ackermann function  
   
   public static void Exercise8() {
-     //System.out.println("You have chosen exercise 8.");
     System.out.println("Choose 2 integers greater or equal to 0: ");
     Scanner in = new Scanner(System.in);
     int m = in.nextInt();
@@ -85,7 +84,6 @@ public class Methods{
       Exercise8();
     }
     else {
-      //System.out.println("The numbers were: " + m + " and " + n);
       int ans = ack(m,n); 
       System.out.println("The solution is: " + ans);
         }
