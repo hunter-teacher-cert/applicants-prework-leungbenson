@@ -73,14 +73,74 @@ public static int[] randomArray(int size) {
     }
     return a;
 }
-  
+  /*Exercise 4  
+   *Write a method called indexOfMax that takes an array of integers and returns the index of the largest element. 
+   * Can you write this method using an enhanced for loop? Why or why not?
+   * */
+
   public static void Exercise4() {
     System.out.println("Exercise 4");
+    int numValues = 8;
+    int[] ex4 = randomArray(numValues);
+    System.out.println(Arrays.toString(ex4));
+    System.out.println("The index of the highest number is the array is: " + indexOfMax(ex4));
+    
     
   }
+  
+  public static int indexOfMax(int arr[]){
+    int max = arr[0];
+    int index = 0;
+    for (int i=1; i<arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+            index = i;
+        }
+    }
+    return index;
+    
+  }
+  
+  
+  /*Exercise 5
+   * Write a method called sieve that takes an integer parameter, n, and returns a boolean array that indicates, 
+   * for each number from 0 to n - 1, whether the number is prime.
+   * */
   public static void Exercise5() {
     System.out.println("Exercise 5");
+    System.out.println("Pick a number: ");
+    Scanner in = new Scanner(System.in);
+    int x = in.nextInt();
+    int[] arr = numbers(x);
+    System.out.println(Arrays.toString(sieve(arr)));
+  }
+  
+  public static int[] numbers (int x){
+    int num[] = new int[x];
+    for (int i = 0; i<=x-1; i++){
+      num[i]=i;
+    }
+    return num;
     
   }
+  
+  public static boolean[] sieve(int num[]){
+    boolean[] primeNum = new boolean[num.length];
+    for (int i = 0; i<=num.length; i++){
+      int n = num[i];
+      boolean prime = true;
+      for (int a = 2; a<=n/2; i++){
+        if (n%a==0){
+        prime = false;
+      }
+        else{
+          prime = true;
+        }
+      }
+      primeNum[i] = prime;
+    }
+    return primeNum;
+  }
+  
   
 }
