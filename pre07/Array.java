@@ -76,6 +76,8 @@ public static int[] randomArray(int size) {
   /*Exercise 4  
    *Write a method called indexOfMax that takes an array of integers and returns the index of the largest element. 
    * Can you write this method using an enhanced for loop? Why or why not?
+   * 
+   * You can not write this method as an enhanced for loop because we need to refer to an index.
    * */
 
   public static void Exercise4() {
@@ -112,9 +114,13 @@ public static int[] randomArray(int size) {
     Scanner in = new Scanner(System.in);
     int x = in.nextInt();
     int[] arr = numbers(x);
-    System.out.println(Arrays.toString(sieve(arr)));
+    boolean[] prime = sieve(arr);
+    // Print integere and whether they are prime or not
+    System.out.println(Arrays.toString(arr));
+    System.out.println(Arrays.toString(prime));
   }
   
+  // Stores integers into array
   public static int[] numbers (int x){
     int num[] = new int[x];
     for (int i = 0; i<=x-1; i++){
@@ -124,23 +130,29 @@ public static int[] randomArray(int size) {
     
   }
   
-  public static boolean[] sieve(int num[]){
-    boolean[] primeNum = new boolean[num.length];
-    for (int i = 0; i<=num.length; i++){
-      int n = num[i];
-      boolean prime = true;
-      for (int a = 2; a<=n/2; i++){
-        if (n%a==0){
-        prime = false;
-      }
-        else{
-          prime = true;
-        }
-      }
-      primeNum[i] = prime;
-    }
-    return primeNum;
+  // Check for prime
+   public static boolean isPrime(int n) 
+   {  
+       if (n <= 1) {  
+           return false;  
+       }  
+       for (int i = 2; i <= Math.sqrt(n); i++) {  
+           if (n % i == 0) {  
+               return false;  
+           }  
+       }  
+       return true;  
+   }  
+   
+   
+ // Store integers into true/false on prime
+   public static boolean[] sieve(int num[]){
+     boolean[] p = new boolean[num.length];
+     for (int i = 0; i < num.length; i++)
+     {
+       p[i] = isPrime(i);
+     }
+     return p;
   }
-  
-  
+    
 }

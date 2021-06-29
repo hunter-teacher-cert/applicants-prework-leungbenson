@@ -17,7 +17,7 @@ public class Ex2{
     
     double celcius = in.nextDouble();;
     
-    double fah = celcius * 9.0 / 5.0 + 32.0; //Formula to convert from C to F
+    double fah = celcius * 9.0 / 5 + 32; //Formula to convert from C to F
     
     // Prints out conversion to one decimal place
     
